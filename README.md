@@ -4,21 +4,21 @@ A Next.js package that provides AI-powered file analysis capabilities.
 
 ## Installation
 
-\`\`\`bash
+```bash
 npm install kernal-pilot
-\`\`\`
+```
 
 ## Usage
 
 1. Start the analysis server:
 
-\`\`\`bash
+```bash
 npx kernal-pilot start
-\`\`\`
+```
 
 2. In your Next.js application:
 
-\`\`\`typescript
+```typescript
 import { analyzeFile, FileAnalyzer } from 'kernal-pilot';
 
 // Using the React component
@@ -42,7 +42,7 @@ async function analyzeMyFile() {
     console.error('Analysis failed:', error);
   }
 }
-\`\`\`
+```
 
 ## API
 
@@ -51,8 +51,8 @@ async function analyzeMyFile() {
 Analyzes a file using AI.
 
 Parameters:
-- \`options.filePath\`: Path to the file to analyze
-- \`options.prompt\`: Prompt for the AI analysis
+- `options.filePath`: Path to the file to analyze
+- `options.prompt`: Prompt for the AI analysis
 
 Returns: Promise with analysis results
 
@@ -61,4 +61,4 @@ Returns: Promise with analysis results
 React component for file analysis.
 
 Props:
-- \`onAnalysisComplete\`: Callback function called with analysis results
+- `onAnalysisComplete`: Callback function called with analysis results
