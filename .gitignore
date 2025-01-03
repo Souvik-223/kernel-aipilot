@@ -1,0 +1,60 @@
+# IDE - VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+venv/
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Debug and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Project specific compiled outputs
+bin/
+obj/
+*.class
+*.jar
