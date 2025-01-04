@@ -1,6 +1,6 @@
 {
   "name": "kernel-pilot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Next.js package for AI-powered file analysis",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,22 +14,27 @@
     "dist",
     "README.md"
   ],
-  "keywords": ["nextjs", "ai", "file-analysis"],
+  "keywords": [
+    "nextjs",
+    "ai",
+    "file-analysis"
+  ],
   "peerDependencies": {
     "next": ">=12.0.0",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
+    "@gradio/client": "^1.8.0",
     "axios": "^1.6.2",
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.38",
-    "@types/cors": "^2.8.17",
     "typescript": "^5.3.2"
   },
   "repository": {
@@ -42,5 +47,7 @@
     "url": "https://github.com/TanishBasu2002/KernelPilot/issues"
   },
   "homepage": "https://github.com/TanishBasu2002/KernelPilot#readme",
-  "bin": { "kernal-pilot": "./bin/kernal-pilot" }
+  "bin": {
+    "kernal-pilot": "./bin/kernal-pilot"
+  }
 }
