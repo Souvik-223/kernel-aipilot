@@ -43,10 +43,7 @@ async function analyzeMyFile() {
   }
 }
 ```
-<<<<<<< HEAD
-=======
 Or
->>>>>>> main
 
 3. Use Code Generator:
 
