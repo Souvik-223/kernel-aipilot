@@ -49,5 +49,10 @@
   "homepage": "https://github.com/TanishBasu2002/KernelPilot#readme",
   "bin": {
     "kernal-pilot": "./bin/kernal-pilot"
+  },
+  "exports": {
+  ".": {
+    "require": "./index.js" 
+  }
   }
 }
