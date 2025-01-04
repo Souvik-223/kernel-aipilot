@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
+import { Client } from "@gradio/client";
+
 
 const app = express();
 app.use(cors());
@@ -16,12 +18,11 @@ app.post('/analyze', async (req, res) => {
     
     // Here you would typically send this to your AI backend
     // This is just the axios setup - backend implementation not included
-    /*
-    const response = await axios.post('YOUR_AI_BACKEND_URL', {
-      content: fileContent,
-      prompt: prompt
+    const client = await Client.connect("Souvik-223/Qwen-Qwen2.5-Coder-32B-Instruct");
+    const result = await client.predict("/chat", { 		
+		  message: prompt+fileContent, 
     });
-    */
+    console.log(result.data);
     
     res.json({
       success: true,
