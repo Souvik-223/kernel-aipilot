@@ -1,6 +1,7 @@
-import { Client } from "@gradio/client";
 import fs from 'fs/promises';
 import path from 'path';
+import { generateText } from 'ai';
+import { createOpenAI as createGroq } from '@ai-sdk/openai';
 
 interface AIResponse {
   data: string[];
@@ -16,7 +17,6 @@ export class HuggingFaceService {
 
   private async initializeClient() {
     try {
-      this.client = await Client.connect("Souvik-223/Qwen-Qwen2.5-Coder-32B-Instruct");
     } catch (error) {
       console.error("Failed to connect to Hugging Face:", error);
       throw error;
@@ -41,12 +41,20 @@ export class HuggingFaceService {
       const formattedPrompt = `Generate code for the following request: ${prompt}`;
 
       // Make API call to Hugging Face
-      const result = await this.client.predict("/chat", {
-        message: formattedPrompt,
-      }) as AIResponse;
+      const groq = createGroq({
+        baseURL: 'Souvik-223/Qwen-Qwen2.5-Coder-32B-Instruct',
+        apiKey: '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',
+      });
+
+      const result = await generateText({
+        model: groq('Qwen-Qwen2.5-Coder-32B-Instruct'),
+        prompt:formattedPrompt,
+      });
+
+      console.log(result.text);
 
       // Extract code from response
-      const generatedCode = Array.isArray(result.data) ? result.data.join('\n') : result.data;
+      const generatedCode = Array.isArray(result.text) ? result.text.join('\n') : result.text;
 
       // Create full file path
       const filePath = path.join(this.outputDir, filename);

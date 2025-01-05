@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 interface CodeGeneratorProps {
   onGenerationComplete?: (filePath: string) => void;
 }
+
+// IMPORTANT! Set the runtime to edge
+export const runtime = 'edge';
 
 export const CodeGenerator: React.FC<CodeGeneratorProps> = ({ onGenerationComplete }) => {
   const [prompt, setPrompt] = useState('');
@@ -20,7 +24,7 @@ export const CodeGenerator: React.FC<CodeGeneratorProps> = ({ onGenerationComple
         prompt,
         filename
       });
-
+      
       onGenerationComplete?.(response.data.filePath);
     } catch (err) {
         if (err instanceof Error) {

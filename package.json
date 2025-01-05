@@ -25,7 +25,8 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@gradio/client": "^1.8.0",
+    "@ai-sdk/openai": "^1.0.13",
+    "ai": "^4.0.26",
     "axios": "^1.6.2",
     "cors": "^2.8.5",
     "express": "^4.18.2"
