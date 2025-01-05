@@ -5,7 +5,7 @@ A Next.js package that provides AI-powered file analysis capabilities.
 ## Installation
 
 ```bash
-npm install kernal-pilot
+npm install kernel-pilot
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install kernal-pilot
 1. Start the analysis server:
 
 ```bash
-npx kernal-pilot start
+npx kernel-pilot start
 ```
 
 2. In your Next.js application:
