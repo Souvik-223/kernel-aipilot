@@ -1,34 +1,31 @@
 import express from 'express';
 import cors from 'cors';
-import fs from 'fs/promises';
-import path from 'path';
-import { Client } from "@gradio/client";
-
+import { HuggingFaceService } from './huggingface';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const PORT = 4561;
+const huggingFaceService = new HuggingFaceService();
 
-app.post('/analyze', async (req, res) => {
+app.post('/generate', async (req, res) => {
   try {
-    const { filePath, prompt } = req.body;
-    const fileContent = await fs.readFile(path.resolve(filePath), 'utf-8');
+    const { prompt, filename } = req.body;
     
-    // Here you would typically send this to your AI backend
-    // This is just the axios setup - backend implementation not included
-    const client = await Client.connect("Souvik-223/Qwen-Qwen2.5-Coder-32B-Instruct");
-    const result = await client.predict("/chat", { 		
-		  message: prompt+fileContent, 
-    });
-    console.log(result.data);
-    
+    if (!prompt || !filename) {
+      return res.status(400).json({
+        success: false,
+        message: 'Both prompt and filename are required'
+      });
+    }
+
+    const filePath = await huggingFaceService.generateAndSaveCode(prompt, filename);
+
     res.json({
       success: true,
-      message: 'File analyzed successfully',
-      fileContent,
-      prompt
+      message: 'Code generated successfully',
+      filePath
     });
   } catch (error) {
     const errorMessage = (error as Error).message;
@@ -41,5 +38,5 @@ app.post('/analyze', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`AI File Analyzer server running on port ${PORT}`);
+  console.log(`AI File Generator server running on port ${PORT}`);
 });

@@ -5,7 +5,7 @@ A Next.js package that provides AI-powered file analysis capabilities.
 ## Installation
 
 ```bash
-npm install kernal-pilot
+npm install kernel-pilot
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install kernal-pilot
 1. Start the analysis server:
 
 ```bash
-npx kernal-pilot start
+npx kernel-pilot start
 ```
 
 2. In your Next.js application:
@@ -43,9 +43,41 @@ async function analyzeMyFile() {
   }
 }
 ```
+Or
 
+3. Use Code Generator:
+
+```typescript
+import { CodeGenerator } from 'kernal-pilot';
+
+function MyComponent() {
+  const handleGenerationComplete = (filePath: string) => {
+    console.log('Code generated at:', filePath);
+  };
+
+  return (
+    <CodeGenerator onGenerationComplete={handleGenerationComplete} />
+  );
+}
+```
 ## API
 
+```typescript
+// Using fetch
+const response = await fetch('http://localhost:4561/generate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    prompt: 'Create functions with error cases like division by zero',
+    filename: 'error-cases.js'
+  })
+});
+
+const result = await response.json();
+console.log('Generated file path:', result.filePath);
+```
 ### analyzeFile(options)
 
 Analyzes a file using AI.
@@ -61,4 +93,8 @@ Returns: Promise with analysis results
 React component for file analysis.
 
 Props:
+<<<<<<< HEAD
 - `onAnalysisComplete`: Callback function called with analysis results
+=======
+- `onAnalysisComplete`: Callback function called with analysis results
+>>>>>>> main
