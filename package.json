@@ -15,8 +15,9 @@
     "README.md"
   ],
   "keywords": [
-    "nextjs",
-    "ai",
+    "js framework support",
+    "ai-agent",
+    "ai code genertor",
     "file-analysis"
   ],
   "peerDependencies": {
