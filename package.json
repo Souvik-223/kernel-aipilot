@@ -50,5 +50,9 @@
   "homepage": "https://github.com/Souvik-223/kernel-pilott#readme",
   "bin": {
     "kernal-pilot": "./bin/kernal-pilot"
+   },
+  "exports": {
+  ".": {
+    "require": "./index.js" 
   }
 }
