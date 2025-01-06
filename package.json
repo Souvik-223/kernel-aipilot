@@ -1,6 +1,6 @@
 {
-  "name": "kernel-pilot",
-  "version": "0.0.2",
+  "name": "kernel-aipilot",
+  "version": "0.0.1",
   "description": "A Next.js package for AI-powered file analysis",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,14 +40,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TanishBasu2002/KernelPilot.git"
+    "url": "git+https://github.com/Souvik-223/kernel-aipilot"
   },
-  "author": "Souvik-223 & TanishBasu2002",
+  "author": "Souvik-223",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TanishBasu2002/KernelPilot/issues"
+    "url": "https:https://github.com/Souvik-223/kernel-aipilot/issues"
   },
-  "homepage": "https://github.com/TanishBasu2002/KernelPilot#readme",
+  "homepage": "https://github.com/Souvik-223/KernelPilot#readme",
   "bin": {
     "kernal-pilot": "./bin/kernal-pilot"
   }
