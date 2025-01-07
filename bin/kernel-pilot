@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const { spawn } = require('child_process');
+const path = require('path');
+
+const command = process.argv[2];
+
+if (command === 'start') {
+  const serverPath = path.join(__dirname, '../dist/server.js');
+  const server = spawn('node', [serverPath], { stdio: 'inherit' });
+  
+  server.on('error', (err) => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+} else {
+  console.log('Unknown command. Available commands: start');
+  process.exit(1);
+}

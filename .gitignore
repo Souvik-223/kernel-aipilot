@@ -54,7 +54,6 @@ coverage/
 *~
 
 # Project specific compiled outputs
-bin/
 obj/
 *.class
 *.jar
